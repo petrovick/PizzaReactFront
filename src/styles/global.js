@@ -19,9 +19,9 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased !important;
     }
 
-    html, body, #root {
-        height: 100%
-    }
+    /*html, body, #root {
+        height: 100%;
+    }*/
 
     input, button {
         font-family: 'Source Sans Pro', sans-serif;

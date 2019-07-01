@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import colors from '~/styles/colors';
+import metrics from '~/styles/metrics';
 
 export const Container = styled.div`
   flex: 1;
   height: 100%;
-  background: linear-gradient(20deg, hsl(240, 60%, 65%), hsl(65, 64%, 60%));
+  background: linear-gradient(#ffffff 0, #000000 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,17 +14,18 @@ export const Container = styled.div`
 export const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
+  position: absolute;
+  z-index: -1;
 `;
 
 export const SignForm = styled.form`
   background: colors.transparent;
   border-radius: 5px;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 40px;
   width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 
   h1 {
     font-size: 26px;
@@ -32,31 +34,38 @@ export const SignForm = styled.form`
     margin: 0 0 10px;
   }
 
-  span {
-    color: #b9bbbe;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 600;
-    margin-top: 15px;
+  img {
+    width: 72px;
+    height: 72px;
   }
 
-  input {
-    height: 40px;
-    padding: 10px;
-    border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #f6f6f6;
-    margin-top: 8px;
-    transition: border 0.15s ease;
-    font-size: 16px;
+  div {
+    background: colors.transparent;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
-    &:focus {
-      border-color: #7289da;
+    input {
+      height: 40px;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 1);
+      color: #000000;
+      margin-top: 8px;
+      transition: border 0.15s ease;
+      font-size: 16px;
+
+      &:focus {
+        border-color: #7289da;
+      }
     }
-  }
 
-  button {
-    margin: 20px 0;
+    button {
+      margin: 20px 0;
+      background-color: #fd003e;
+    }
   }
 `;

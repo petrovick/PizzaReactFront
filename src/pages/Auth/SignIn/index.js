@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import AuthActions from '~/store/ducks/auth';
 
 import FundoIcon from '~/assets/images/fundo.jpg';
+import PizzaLoginIcon from '~/assets/images/pizzalogin.png';
 
 import Button from '~/styles/components/Button';
 
@@ -18,8 +19,8 @@ class SignIn extends Component {
   };
 
   state = {
-    email: '',
-    password: '',
+    email: 'emailadmin@hotmail.com',
+    password: '123456',
   };
 
   handleInputChange = (e) => {
@@ -39,31 +40,36 @@ class SignIn extends Component {
     return (
       <Container src={FundoIcon}>
         <BackgroundImage src={FundoIcon} />
-          <SignForm onSubmit={this.handleSubmit}>
-            <h1>Boas vindas</h1>
+        <SignForm onSubmit={this.handleSubmit}>
+            <img src={PizzaLoginIcon} alt="Pizza Login Image" />
+          <div>
+            
+          <input type="email" 
+            name="email" 
+            value={email} 
+            onChange={this.handleInputChange} 
+            placeholder="Seu e-mail"/>
 
-            <span>E-Mail</span>
-            <input type="email" name="email" value={email} onChange={this.handleInputChange} />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleInputChange}
+            placeholder="Senha secreta"
+          />
 
-            <span>Senha</span>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleInputChange}
-            />
-
-            <Button size="big" type="submit">
-              Entrar
-            </Button>
-          </SignForm>
+          <Button size="big" type="submit">
+            Entrar
+          </Button>
+          </div>
+        </SignForm>
       </Container>
     );
   }
 }
-// const mapDispatchToProps = dispatch => bindActionCreators(AuthActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(AuthActions, dispatch);
 
 export default connect(
   null,
-  // mapDispatchToProps,
+  mapDispatchToProps,
 )(SignIn);
