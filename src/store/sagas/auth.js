@@ -9,19 +9,19 @@ export function* signIn({ email, password }) {
     console.tron.log(email);
     console.tron.log(password);
     const response = yield call(api.post, 'user/signin', { email, password });
-    console.tron.error('Chegou no response.');
+    console.tron.error(response);
     localStorage.setItem('@gofinal:token', 'tokenComesHereLater');
 
     yield put(AuthActions.signInSuccess(response.data.token));
     // yield put(AuthActions.signInSuccess('tokenComesHereLater'));
     yield put(push('/'));
   } catch (err) {
+    console.tron.warn(err);
     yield put(
       toastrActions.add({
         type: 'error',
         title: 'Falha no login',
-        //message: 'Verifique seu e-mail/senha',
-        message: err,
+        message: 'Verifique seu e-mail/senha',
       }),
     );
   }

@@ -11,30 +11,31 @@ import {
   OrderDetailObs,
 } from './styles';
 
-import ProductTypeSizeItem from '~/components/ProductTypeSizeItem'
+import ProductTypeSizeItem from '~/components/ProductTypeSizeItem';
 
 const OrderItem = ({ order }) => (
   <Container>
     <OrderDetail>
       <OrderDetailName>
-        Pedido
-        {' '}
-        <strong>#3</strong>
-        {' '}
-- Diego Schell Fernandes
+        {'Pedido '}
+        <strong>{`#${order.order_id}`}</strong>
+        {` - ${order.user_name}`}
       </OrderDetailName>
-      <OrderDetailTime>há 2 minutos</OrderDetailTime>
-      <OrderDetailPrice>R$ 42,00</OrderDetailPrice>
+      <OrderDetailTime>{order.product_time}</OrderDetailTime>
+      <OrderDetailPrice>
+        R$
+        {order.order_price}
+      </OrderDetailPrice>
       <OrderDetailLine />
       <OrderDetailProds>
-        {order && order.productTypeSizes && order.productTypeSizes.map(item => (
-          <ProductTypeSizeItem prodTypeSize={item}  />
-        ))}
+        {order
+          && order.productDetails
+          && order.productDetails.map(item => <ProductTypeSizeItem prodTypeSize={item} />)}
       </OrderDetailProds>
       <OrderDetailLine />
       <OrderDetailObs>
         <strong>Observações:</strong>
-Favor remover o tomate da pizza
+        {order.order_obs}
       </OrderDetailObs>
     </OrderDetail>
   </Container>

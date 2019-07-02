@@ -1,23 +1,23 @@
 import { call, put, select } from 'redux-saga/effects';
-import { push } from 'connected-react-router';
 import { actions as toastrActions } from 'react-redux-toastr';
 import api from '~/services/api';
-import AuthActions from '../ducks/auth';
+import OrdersActions from '../ducks/orders';
 
-export function* listOrders(data) {
+export function* listOrders() {
   try {
-    // const response = yield call(api.post, 'sessions', { email, password });
-    localStorage.setItem('@gofinal:token', 'tokenComesHereLater');
-
+    console.tron.error('listOrders');
+    const { data } = yield call(api.get, 'admin/orders');
+    console.tron.error('data listOrders');
+    console.tron.error(data);
     // yield put(AuthActions.signInSuccess(response.data.token));
-    yield put(AuthActions.signInSuccess('tokenComesHereLater'));
-    yield put(push('/'));
+    yield put(OrdersActions.listOrdersSuccess(data));
   } catch (err) {
+    console.tron.error('Catch data listOrders');
     yield put(
       toastrActions.add({
         type: 'error',
-        title: 'Falha no login',
-        message: 'Verifique seu e-mail/senha',
+        title: 'Falha ao buscar os pedidos',
+        message: 'Verifique se voce e',
       }),
     );
   }

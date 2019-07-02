@@ -17,7 +17,14 @@ import {
 import OrderItem from '~/components/OrderItem';
 
 class Main extends Component {
-  componentDidMount() {}
+  listOrders = () => {
+    const { listOrdersRequest } = this.props;
+    listOrdersRequest();
+  };
+
+  componentDidMount() {
+    this.listOrders();
+  }
 
   render() {
     const { data } = this.props.orders;

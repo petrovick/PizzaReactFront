@@ -19,7 +19,7 @@ class SignIn extends Component {
   };
 
   state = {
-    email: 'emailadmin@hotmail.com',
+    email: 'nomeadmin@hotmail.com',
     password: '123456',
   };
 

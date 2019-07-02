@@ -12,10 +12,10 @@ import {
 const ProductTypeSizeItem = ({ prodTypeSize }) => (
   <Container>
     <ContainerProd>
-      <ProdImage src={prodTypeSize.url} alt="Pizza" />
+      <ProdImage src={prodTypeSize.product_type_url} alt={prodTypeSize.product_name} />
       <ContainerProdDetail>
-        <ProdTypeName>Pizza Calabresa</ProdTypeName>
-        <ProdSizeDescription>Tamanho: Média</ProdSizeDescription>
+        <ProdTypeName>{prodTypeSize.product_type_name}</ProdTypeName>
+        <ProdSizeDescription>{prodTypeSize.product_sizes_description}</ProdSizeDescription>
       </ContainerProdDetail>
     </ContainerProd>
   </Container>
