@@ -5,14 +5,13 @@ import metrics from '../metrics';
 const Button = styled.button.attrs({
   type: 'button',
 })`
-  border-radius: 3px;
+  border-radius: 10px;
   transition: background-color 0.15s ease;
   background: #7289da;
   border: 0;
   color: #fff;
   font-size: 12px;
-  passding: 0 10px;
-  text-transform: uppercase;
+  padding: 0 10px;
   font-weight: 700;
 
   ${props => metrics[props.size || 'default']}

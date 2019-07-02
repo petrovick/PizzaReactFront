@@ -10,8 +10,9 @@ import FundoIcon from '~/assets/images/fundo.jpg';
 import PizzaLoginIcon from '~/assets/images/pizzalogin.png';
 
 import Button from '~/styles/components/Button';
+import Input from '~/styles/components/Input';
 
-import { Container, BackgroundImage, SignForm } from '../styles';
+import { Container, BackgroundImage, SignForm } from './styles';
 
 class SignIn extends Component {
   static propTypes = {
@@ -38,19 +39,22 @@ class SignIn extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <Container src={FundoIcon}>
+      <Container>
         <BackgroundImage src={FundoIcon} />
         <SignForm onSubmit={this.handleSubmit}>
-            <img src={PizzaLoginIcon} alt="Pizza Login Image" />
+            <img src={PizzaLoginIcon} alt="Pizza Login" />
           <div>
-            
-          <input type="email" 
-            name="email" 
-            value={email} 
-            onChange={this.handleInputChange} 
+
+          <Input
+            size="default"
+            type="email"
+            name="email"
+            value={email}
+            onChange={this.handleInputChange}
             placeholder="Seu e-mail"/>
 
-          <input
+          <Input
+            size="default"
             type="password"
             name="password"
             value={password}
@@ -58,7 +62,7 @@ class SignIn extends Component {
             placeholder="Senha secreta"
           />
 
-          <Button size="big" type="submit">
+          <Button size="big" color="red" type="submit">
             Entrar
           </Button>
           </div>

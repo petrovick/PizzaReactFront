@@ -11,16 +11,16 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
-    body {
-        background: #353940;
-        color: #FFF;
-        font-family: 'Source Sans Pro', sans-serif;
-        text-rendering: optimizeLegibility !important;
-        -webkit-font-smoothing: antialiased !important;
-    }
-
     html, body, #root {
         height: 100%;
+    }
+
+    body {
+      text-rendering: optimizeLegibility !important;
+      --webkit-font-smoothing: antialiased !important;
+      background: #000;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
     }
 
     input, button {

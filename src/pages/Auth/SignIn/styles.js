@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import colors from '~/styles/colors';
-import metrics from '~/styles/metrics';
+// import colors from '~/styles/colors';
+// import metrics from '~/styles/metrics';
 
 export const Container = styled.div`
   flex: 1;
   height: 100%;
-  background: linear-gradient(#ffffff 0, #000000 100%);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,14 @@ export const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -1;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 `;
 
 export const SignForm = styled.form`
@@ -26,6 +33,7 @@ export const SignForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 
   h1 {
     font-size: 26px;
@@ -37,6 +45,7 @@ export const SignForm = styled.form`
   img {
     width: 72px;
     height: 72px;
+    margin-bottom: 20px;
   }
 
   div {
@@ -47,6 +56,7 @@ export const SignForm = styled.form`
     align-items: stretch;
 
     input {
+      /*
       height: 40px;
       padding: 10px;
       border-radius: 3px;
@@ -57,7 +67,7 @@ export const SignForm = styled.form`
       margin-top: 8px;
       transition: border 0.15s ease;
       font-size: 16px;
-
+*/
       &:focus {
         border-color: #7289da;
       }
@@ -65,7 +75,6 @@ export const SignForm = styled.form`
 
     button {
       margin: 20px 0;
-      background-color: #fd003e;
     }
   }
 `;

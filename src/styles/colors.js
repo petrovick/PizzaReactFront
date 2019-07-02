@@ -15,6 +15,9 @@ const colors = {
       background: #a43d3d;
     }
   `,
+  red: css`
+    background: #fd003e;
+  `,
   gray: css`
     background: #b9bbbe;
     color: #666;

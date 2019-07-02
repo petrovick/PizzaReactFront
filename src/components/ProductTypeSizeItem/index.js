@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -20,5 +21,12 @@ const ProductTypeSizeItem = ({ prodTypeSize }) => (
     </ContainerProd>
   </Container>
 );
-
+ProductTypeSizeItem.propTypes = {
+  prodTypeSize: PropTypes.shape({
+    product_type_url: PropTypes.string,
+    product_name: PropTypes.string,
+    product_type_name: PropTypes.string,
+    product_sizes_description: PropTypes.string,
+  }),
+};
 export default ProductTypeSizeItem;
