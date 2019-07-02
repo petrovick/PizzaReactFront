@@ -21,7 +21,7 @@ export const BackgroundImage = styled.img`
 export const SignForm = styled.form`
   background: colors.transparent;
   border-radius: 5px;
-  padding: 40px;
+  /*padding: 40px;*/
   width: 400px;
   display: flex;
   flex-direction: column;

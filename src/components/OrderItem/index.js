@@ -21,10 +21,9 @@ const OrderItem = ({ order }) => (
         <strong>{`#${order.order_id}`}</strong>
         {` - ${order.user_name}`}
       </OrderDetailName>
-      <OrderDetailTime>{order.product_time}</OrderDetailTime>
+      <OrderDetailTime>{order.order_date}</OrderDetailTime>
       <OrderDetailPrice>
-        R$
-        {order.order_price}
+        {'R$' + order.order_price}
       </OrderDetailPrice>
       <OrderDetailLine />
       <OrderDetailProds>

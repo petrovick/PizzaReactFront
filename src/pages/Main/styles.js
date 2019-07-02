@@ -5,11 +5,9 @@ import metrics from '~/styles/metrics';
 
 export const Container = styled.div`
   flex: 1;
-  height: 100%;
   display: flex;
   background-color: #ffffff;
   flex-direction: column;
-  margin: 10px 0 0;
 `;
 
 export const Header = styled.div`
@@ -48,4 +46,5 @@ export const ContainerList = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  autoflow: scroll;
 `;

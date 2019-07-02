@@ -43,6 +43,10 @@ class Main extends Component {
           {data.map(item => (
             <OrderItem order={item} />
           ))}
+
+          {data.map(item => (
+            <OrderItem order={item} />
+          ))}
         </ContainerList>
       </Container>
     );
