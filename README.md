@@ -1,3 +1,11 @@
+To run this app follow the below instructions
+
+##Running Project
+
+The folllowing command will download all the needed dependencies.
+
+### `yarn`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
