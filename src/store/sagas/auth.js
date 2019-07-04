@@ -8,7 +8,7 @@ export function* signIn({ email, password }) {
   try {
     console.tron.log(email);
     console.tron.log(password);
-    const response = yield call(api.post, 'user/signin', { email, password });
+    const response = yield call(api.post, 'admin/signin', { email, password });
     console.tron.error(response);
     localStorage.setItem('@gofinal:token', 'tokenComesHereLater');
 
