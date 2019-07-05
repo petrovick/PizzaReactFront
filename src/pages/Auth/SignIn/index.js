@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import AuthActions from '~/store/ducks/auth';
 
+import { FaSpinner } from 'react-icons/fa';
+
 import FundoIcon from '~/assets/images/fundo.jpg';
 import PizzaLoginIcon from '~/assets/images/pizzalogin.png';
 
@@ -38,6 +40,7 @@ class SignIn extends Component {
 
   render() {
     const { email, password } = this.state;
+    const { loading } = this.props.auth;
     return (
       <Container>
         <BackgroundImage src={FundoIcon} />
@@ -62,8 +65,9 @@ class SignIn extends Component {
             placeholder="Senha secreta"
           />
 
-          <Button size="big" color="red" type="submit">
-            Entrar
+          <Button size="big" color="red" type="submit" loading={loading ? 'loading' : ''} >
+            {loading ? 'Carregando...' : 'Entrar'}
+            
           </Button>
           </div>
         </SignForm>
@@ -71,9 +75,13 @@ class SignIn extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
 const mapDispatchToProps = dispatch => bindActionCreators(AuthActions, dispatch);
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(SignIn);

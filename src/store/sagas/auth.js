@@ -6,17 +6,15 @@ import AuthActions from '../ducks/auth';
 
 export function* signIn({ email, password }) {
   try {
-    console.tron.log(email);
-    console.tron.log(password);
     const response = yield call(api.post, 'admin/signin', { email, password });
-    console.tron.error(response);
+
     localStorage.setItem('@gofinal:token', 'tokenComesHereLater');
 
-    yield put(AuthActions.signInSuccess(response.data.token));
+    yield put(AuthActions.signInSuccess(response.data));
     // yield put(AuthActions.signInSuccess('tokenComesHereLater'));
     yield put(push('/'));
   } catch (err) {
-    console.tron.warn(err);
+    yield put(AuthActions.signInError());
     yield put(
       toastrActions.add({
         type: 'error',

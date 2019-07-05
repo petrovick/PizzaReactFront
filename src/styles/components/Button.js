@@ -14,6 +14,7 @@ const Button = styled.button.attrs({
   padding: 0 10px;
   font-weight: 700;
 
+
   ${props => metrics[props.size || 'default']}
   ${props => colors[props.color || 'default']}
 
@@ -25,6 +26,12 @@ const Button = styled.button.attrs({
         background: none;
         opacity: 0.6;
       }
+    `}
+
+  ${props => props.loading === 'loading'
+    && css`
+      pointer-events: none;
+      background-color: #333;
     `}
 
 `;

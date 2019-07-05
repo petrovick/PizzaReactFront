@@ -51,6 +51,7 @@ class Main extends Component {
 
   render() {
     const { data, loading } = this.props.orders;
+    const { user } = this.props.auth;
     if(loading) {
       return (
         <h1>Carregando</h1>
@@ -65,7 +66,7 @@ class Main extends Component {
           </HeaderLeft>
           <HeaderRight>
             <HeaderRightName>
-              <div>Diego Fernandes</div>
+              <div>{user}</div>
               <HeaderRightSignout onClick={this.handleSignoutClick}>Sair do App</HeaderRightSignout>
             </HeaderRightName>
 
@@ -90,6 +91,7 @@ class Main extends Component {
 
 const mapStateToProps = state => ({
   orders: state.orders,
+  auth: state.auth
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({...OrdersActions, ...AuthActions}, dispatch);
