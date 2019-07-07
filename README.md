@@ -29,11 +29,6 @@ Prior to running this app, edit the [api.js file][https://github.com/petrovick/p
 ![Login](https://
 raw.githubusercontent.com/petrovick/pizzareactfront/master/solutions/images/login.png)
 
-### Orders
-
-![Orders](https://
-raw.githubusercontent.com/petrovick/pizzareactfront/master/solutions/images/main.png)
-
 [server]: https://github.com/petrovick/PizzaNodeJSServer
 [frontend]: https://github.com/petrovick/PizzaReactFront
 [mobileclient]: https://github.com/petrovick/PizzaReactNativeClient
