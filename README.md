@@ -22,6 +22,12 @@ Prior to running this app, edit the [api.js file][https://github.com/petrovick/p
 
 ### `yarn start`
 
+## App's Image
+
+### Login
+
+![Login][https://raw.githubusercontent.com/petrovick/pizzareactfront/solutions/images/login.png]
+
 [server]: https://github.com/petrovick/PizzaNodeJSServer
 [frontend]: https://github.com/petrovick/PizzaReactFront
 [mobileclient]: https://github.com/petrovick/PizzaReactNativeClient
