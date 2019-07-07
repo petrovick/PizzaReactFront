@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import metrics from '~/styles/metrics';
-import colors from '~/styles/colors';
+// import metrics from '~/styles/metrics';
+// import colors from '~/styles/colors';
 
 export const Container = styled.div`
   width: 600px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px 0 0 0;
+  padding: 10px;
   background-color: #fff;
   border-radius: 10px;
+  margin-top: 10px;
 `;
 
 export const OrderDetail = styled.div`
-  margin-left: 15px;
   margin-top: 15px;
   display: flex;
   flex-direction: column;
@@ -35,18 +35,22 @@ export const OrderDetailPrice = styled.span`
   font-size: 16px;
 `;
 
-export const OrderDetailLine = styled.hr`
-  color: #333;
+export const OrderDetailLine = styled.div`
+  margin-top: 15px;
+  background-color: #96909d;
   width: 100%;
+  height: 1px;
 `;
 
 export const OrderDetailProds = styled.div`
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   overflow: auto;
 `;
 
 export const OrderDetailObs = styled.span`
+  margin-top: 15px;
   color: #96909d;
   font-size: 16px;
   margin-bottom: 10px;

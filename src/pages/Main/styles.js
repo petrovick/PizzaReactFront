@@ -1,7 +1,10 @@
-import { Fragment } from 'react';
+// import { Fragment } from 'react';
 import styled from 'styled-components';
-import colors from '~/styles/colors';
-import metrics from '~/styles/metrics';
+
+import { FaShoppingBag } from 'react-icons/fa';
+
+// import colors from '~/styles/colors';
+// import metrics from '~/styles/metrics';
 
 export const Container = styled.div`
   flex: 1;
@@ -12,20 +15,34 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   background-color: #092235;
-  displa: flex;
+  display: flex;
   height: 70px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
+  color: #fff;
 `;
 
-export const HeaderLeft = styled(Fragment)`
+export const HeaderLeft = styled.div`
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
 
-export const HeaderRight = styled(Fragment)`
+export const HeaderLeftImage = styled.img`
+  height: 30px;
+  width: 30px;
+`;
+
+export const HeaderLeftText = styled.p`
+  margin-left: 10px;
+  font-weight: bold;
+  color: #fff;
+`;
+
+export const HeaderRight = styled.div`
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -35,10 +52,57 @@ export const HeaderRightName = styled.div`
   flex-direction: row;
 `;
 
+export const HeaderRightSignout = styled.a`
+  color: #96909d;
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+`;
+
 export const HeaderRightLine = styled.div`
-  width: 2px;
+  margin-left: 10px;
+  width: 1px;
   background-color: #fff;
-  height: 50px;
+  height: 30px;
+`;
+
+export const DivIcon = styled.div`
+  position: relative;
+  margin-left: 10px;
+  background-color: #d82545;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DivIconOrange = styled.div`
+  display: flex;
+  height: 10px;
+  width: 10px;
+  border-radius: 50px;
+  background-color: #f5c62a;
+  justify-content: end;
+  align-self: flex-start;
+  position: absolute;
+  right: 0;
+`;
+
+export const IconShoppingBag = styled(FaShoppingBag)`
+  color: #fff;
+  size: 2em;
+`;
+
+export const ContainerListTitleText = styled.h3`
+  font-weight: bold;
+  color: #000;
+  width: 600px;
 `;
 
 export const ContainerList = styled.div`

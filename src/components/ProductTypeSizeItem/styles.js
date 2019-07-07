@@ -4,7 +4,7 @@ export const Container = styled.div`
   margin-left: 10px;
   height: 100px;
   width: 250px;
-  border: 1px solid #666;
+  border: 1px solid #96909d;
   border-radius: 10px;
 `;
 
@@ -24,6 +24,7 @@ export const ProdImage = styled.img`
 export const ContainerProdDetail = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   margin-left: 10px;
 `;
 
@@ -35,4 +36,5 @@ export const ProdTypeName = styled.span`
 export const ProdSizeDescription = styled.span`
   color: #666;
   font-size: 10px;
+  margin-top: 5px;
 `;

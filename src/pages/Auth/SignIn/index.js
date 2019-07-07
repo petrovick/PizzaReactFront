@@ -6,12 +6,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import AuthActions from '~/store/ducks/auth';
 
+import { FaSpinner } from 'react-icons/fa';
+
 import FundoIcon from '~/assets/images/fundo.jpg';
 import PizzaLoginIcon from '~/assets/images/pizzalogin.png';
 
 import Button from '~/styles/components/Button';
+import Input from '~/styles/components/Input';
 
-import { Container, BackgroundImage, SignForm } from '../styles';
+import { Container, BackgroundImage, SignForm } from './styles';
 
 class SignIn extends Component {
   static propTypes = {
@@ -37,20 +40,24 @@ class SignIn extends Component {
 
   render() {
     const { email, password } = this.state;
+    const { loading } = this.props.auth;
     return (
-      <Container src={FundoIcon}>
+      <Container>
         <BackgroundImage src={FundoIcon} />
         <SignForm onSubmit={this.handleSubmit}>
-            <img src={PizzaLoginIcon} alt="Pizza Login Image" />
+            <img src={PizzaLoginIcon} alt="Pizza Login" />
           <div>
-            
-          <input type="email" 
-            name="email" 
-            value={email} 
-            onChange={this.handleInputChange} 
+
+          <Input
+            size="default"
+            type="email"
+            name="email"
+            value={email}
+            onChange={this.handleInputChange}
             placeholder="Seu e-mail"/>
 
-          <input
+          <Input
+            size="default"
             type="password"
             name="password"
             value={password}
@@ -58,8 +65,9 @@ class SignIn extends Component {
             placeholder="Senha secreta"
           />
 
-          <Button size="big" type="submit">
-            Entrar
+          <Button size="big" color="red" type="submit" loading={loading ? 'loading' : ''} >
+            {loading ? 'Carregando...' : 'Entrar'}
+            
           </Button>
           </div>
         </SignForm>
@@ -67,9 +75,13 @@ class SignIn extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
 const mapDispatchToProps = dispatch => bindActionCreators(AuthActions, dispatch);
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(SignIn);
