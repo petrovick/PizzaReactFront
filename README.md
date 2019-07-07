@@ -18,6 +18,10 @@ The folllowing command will download all the needed dependencies.
 
 ### `yarn`
 
+Prior to running this app, edit the [api.js file][https://github.com/petrovick/pizzareactfront/blob/master/src/services/api.js] with the correct server location on the "baseURL" variable.
+
+### `yarn start`
+
 [server]: https://github.com/petrovick/PizzaNodeJSServer
 [frontend]: https://github.com/petrovick/PizzaReactFront
 [mobileclient]: https://github.com/petrovick/PizzaReactNativeClient
