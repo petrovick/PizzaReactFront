@@ -6,7 +6,7 @@ This repository represents the frontend project of a whole system for managing o
 
 [Click here to go to the app's backend.][server]
 
-## App's Mobile App
+## App's Mobile
 
 [Click here to go to the mobile app.][mobileclient]
 
