@@ -1,6 +1,6 @@
 # Pizza App
 
-This repository represents the frontend project of a whole system for managing online Pizza ordering. Which is separeted into three parts, a [backend(server)][server] , frontend and a mobile app.
+This repository represents the frontend project of a whole system for managing online Pizza ordering. Which is separeted into three parts, a [backend(server)][server] , [frontend][frontend] and a [mobile client app][mobileclient].
 
 ## App's Backend
 
